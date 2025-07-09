@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PWA Demo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="icon.png" />
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("sw.js")
+            .then((reg) =>
+              console.log("✅ Service Worker registered:", reg.scope)
+            )
+            .catch((err) => console.error("❌ SW registration failed:", err));
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Welcome to My PWA</h1>
+    <p>This is a simple Progressive Web App.</p>
+    <p>Jaisyu Nur M - 0920240034 - TRPL - 1A</p>
+  </body>
+</html>
